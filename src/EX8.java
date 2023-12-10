@@ -3,7 +3,7 @@ public class EX8 {
         System.out.println("method main begins");
         Thread thread = new Thread(new Worker());
         thread.start();
-        thread.join();
+        thread.join(1500);
         System.out.println("method main ends");
     }
 }
