@@ -10,11 +10,14 @@ public class Ex7 extends Thread {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws InterruptedException {
         Thread thread1 = new Thread(new MyRunnable1());
         Ex7 thread2 = new Ex7();
         thread1.start();
         thread2.start();
+
+        thread1.join();
+        thread2.join();
         System.out.println("Sfirsit");
     }
 }
