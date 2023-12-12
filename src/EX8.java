@@ -2,8 +2,11 @@ public class EX8 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("method main begins");
         Thread thread = new Thread(new Worker());
+        System.out.println(thread.getState());
         thread.start();
-        thread.join(1500);
+        System.out.println(thread.getState());
+        thread.join();
+        System.out.println(thread.getState());
         System.out.println("method main ends");
     }
 }
