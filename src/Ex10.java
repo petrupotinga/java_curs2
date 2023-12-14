@@ -1,7 +1,7 @@
 public class Ex10 {
-    static int counter = 0;
+   volatile static int counter = 0;
 
-    public static void increment() {
+    public static synchronized void increment() {
         counter++;
     }
 
