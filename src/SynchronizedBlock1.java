@@ -11,14 +11,18 @@ public class SynchronizedBlock1 {
 }
 
 class Counter2 {
-    static int count = 0;
+   volatile static int count = 0;
 }
 
 class MyRunnableImpl2 implements Runnable {
-    public synchronized void doWork1() {
+    private void doWork2(){
+        System.out.println("Ura!");
+    }
+    private void doWork1() {
+        doWork2();
         synchronized (this) {
             Counter2.count++;
-            System.out.println(Counter2.count + " ");
+            System.out.println(Counter2.count);
         }
     }
 
