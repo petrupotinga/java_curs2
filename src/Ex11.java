@@ -1,8 +1,8 @@
 public class Ex11 {
-    static final Car car = new Car();
+    static final Object lock = new Object();
 
     void mobileCall() {
-        synchronized (car) {
+        synchronized (lock) {
             System.out.println("Mobile call starts");
             try {
                 Thread.sleep(3000);
@@ -14,7 +14,7 @@ public class Ex11 {
     }
 
     void skypeCall() {
-        synchronized (car) {
+        synchronized (lock) {
             System.out.println("skype call starts");
             try {
                 Thread.sleep(5000);
@@ -27,7 +27,7 @@ public class Ex11 {
     }
 
     void whatsappCall() {
-        synchronized (car) {
+        synchronized (lock) {
             System.out.println("whatsapp call starts");
             try {
                 Thread.sleep(7000);
@@ -67,7 +67,4 @@ class RunnableImplWhatsapp implements Runnable {
     public void run() {
         new Ex11().whatsappCall();
     }
-}
-
-class Car {
 }
