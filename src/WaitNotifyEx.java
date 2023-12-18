@@ -12,33 +12,39 @@ public class WaitNotifyEx {
 
 class Market {
     private int breadCount = 0;
+    private final Object lock = new Object();
 
-    public synchronized void getBread() {
-        while (breadCount < 1) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void getBread() {
+        synchronized (lock) {
+            while (breadCount < 1) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+
+            breadCount--;
+            System.out.println("Cumparatorul a cumparat 1 piine");
+            System.out.println("Cantitatea de piine in magazin " + breadCount);
+            lock.notify();
         }
-        breadCount--;
-        System.out.println("Cumparatorul a cumparat 1 piine");
-        System.out.println("Cantitatea de piine in magazin " + breadCount);
-        notify();
     }
 
-    public synchronized void putBread() {
-        while (breadCount >= 1) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void putBread() {
+        synchronized (lock) {
+            while (breadCount >= 5) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            breadCount++;
+            System.out.println("Producatorul a adaugat la vitrina 1 piine");
+            System.out.println("Cantitatea de piine in magazin " + breadCount);
+            lock.notify();
         }
-        breadCount++;
-        System.out.println("Producatorul a adaugat la vitrina 1 piine");
-        System.out.println("Cantitatea de piine in magazin " + breadCount);
-        notify();
     }
 }
 
