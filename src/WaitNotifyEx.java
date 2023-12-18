@@ -28,7 +28,7 @@ class Market {
     }
 
     public synchronized void putBread() {
-        while (breadCount >= 5) {
+        while (breadCount >= 1) {
             try {
                 wait();
             } catch (InterruptedException e) {
