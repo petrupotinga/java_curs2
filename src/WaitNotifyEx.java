@@ -35,6 +35,7 @@ class Market {
                 e.printStackTrace();
             }
         }
+        breadCount++;
         System.out.println("Producatorul a adaugat la vitrina 1 piine");
         System.out.println("Cantitatea de piine in magazin " + breadCount);
         notify();
