@@ -23,10 +23,11 @@ class Employee extends Thread {
     }
 
     public void run() {
+        try {
         System.out.println(name + " asteapta... ");
         lock.lock();
         System.out.println(name + " foloseste bancomatul");
-        try {
+
             Thread.sleep(2000);
             System.out.println(name + " a finalizat tranzactia");
         } catch (InterruptedException e) {
