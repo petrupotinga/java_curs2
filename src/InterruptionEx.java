@@ -19,9 +19,17 @@ class InterruptedThread extends Thread {
             if (isInterrupted()) {
                 System.out.println("fluxul trebuie intrerupt");
                 System.out.println("finisarea activitatii fluxului");
+                System.out.println(sqrtSum);
                 return;
             }
             sqrtSum += Math.sqrt(i);
+            try {
+                sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println("Fluxul trebuie intrerupt in timpul somnului, finalizarea activitatii lui");
+                System.out.println(sqrtSum);
+                return;
+            }
         }
         System.out.println(sqrtSum);
     }
