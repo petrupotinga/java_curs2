@@ -1,18 +1,18 @@
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-
-
 public class ThreadPoolEx2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ScheduledExecutorService scheduledExecutorService =
                 Executors.newScheduledThreadPool(1);
 //        for (int i = 1; i <= 10; i++) {
 //            scheduledExecutorService.execute(new RunnableImpl200());
 //        }
-        scheduledExecutorService.schedule(new RunnableImpl200()
-        , 3, TimeUnit.SECONDS);
+//        scheduledExecutorService.schedule(new RunnableImpl200()
+//                ,3, TimeUnit.SECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(new RunnableImpl200()
+                , 3, 1, TimeUnit.SECONDS);
+        Thread.sleep(20000);
         scheduledExecutorService.shutdown();
 
     }
@@ -28,6 +28,5 @@ class RunnableImpl200 implements Runnable {
             e.printStackTrace();
         }
         System.out.println(Thread.currentThread().getName() + " ends work");
-
     }
 }
