@@ -1,8 +1,13 @@
-public class AtomicInteger {
-    static int counter = 0;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    public synchronized static void increment() {
-        counter++;
+public class AtomicIntegerEX {
+    //    static int counter = 0;
+    static AtomicInteger counter = new AtomicInteger(0);
+
+    public static void increment() {
+//        counter++;
+//        counter.incrementAndGet();
+        counter.addAndGet(5);
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -22,7 +27,7 @@ class MyRunnableImpl18 implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
-            AtomicInteger.increment();
+            AtomicIntegerEX.increment();
         }
     }
 }
