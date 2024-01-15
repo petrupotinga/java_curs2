@@ -1,3 +1,5 @@
+package многопоточность;
+
 import java.util.concurrent.Semaphore;
 
 public class SemaphoreEx {

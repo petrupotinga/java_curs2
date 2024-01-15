@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex10 {
    volatile static int counter = 0;
 

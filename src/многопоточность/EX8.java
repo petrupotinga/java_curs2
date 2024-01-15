@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class EX8 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("method main begins");

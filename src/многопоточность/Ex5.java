@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex5 implements Runnable{
     public void run() {
         System.out.println("Method run. Thread name = " +

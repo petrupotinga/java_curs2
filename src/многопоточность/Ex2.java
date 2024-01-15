@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex2 implements Runnable {
     public void run() {
         for (int i = 1; i <= 100; i++) {

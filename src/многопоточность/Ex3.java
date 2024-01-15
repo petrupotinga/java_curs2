@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex3 {
     public static void main(String[] args) {
         new Thread(new Runnable() {

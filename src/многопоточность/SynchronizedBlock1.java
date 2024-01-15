@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class SynchronizedBlock1 {
     public static void main(String[] args) {
         MyRunnableImpl2 runnable = new MyRunnableImpl2();

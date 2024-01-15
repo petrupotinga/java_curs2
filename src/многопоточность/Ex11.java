@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex11 {
     static final Object lock = new Object();
 

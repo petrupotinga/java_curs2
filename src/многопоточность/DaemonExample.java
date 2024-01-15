@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class DaemonExample {
     public static void main(String[] args) {
         System.out.println("Main thread starts");

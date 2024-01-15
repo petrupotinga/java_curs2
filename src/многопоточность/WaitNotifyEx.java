@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class WaitNotifyEx {
     public static void main(String[] args) {
         Market market = new Market();

@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex9 {
     public static void main(String[] args) {
         MyRunnableImpl1 runnable = new MyRunnableImpl1();

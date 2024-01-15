@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class InterruptionEx {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("main starts");

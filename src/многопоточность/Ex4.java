@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class Ex4 {
     public static void main(String[] args) {
         MyThread4 myThread4 = new MyThread4();

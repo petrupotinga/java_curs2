@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class DeadLockEx {
     public static final Object lock1 = new Object();
     public static final Object lock2 = new Object();
@@ -17,7 +19,7 @@ class Thread10 extends Thread{
             System.out.println("Thread10: Incercarea de a captura monitorul obiectului lock2");
             synchronized (DeadLockEx.lock2){
                 System.out.println("Thread10: Monitorele obiectului lock1" +
-                "si lock2 capturate");
+                        "si lock2 capturate");
 
             }
         }

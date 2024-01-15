@@ -1,3 +1,5 @@
+package многопоточность;
+
 public class VolatileEx extends Thread {
     volatile boolean b = true;
 
