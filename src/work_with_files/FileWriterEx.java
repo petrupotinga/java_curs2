@@ -5,10 +5,12 @@ import java.io.IOException;
 
 public class FileWriterEx {
     public static void main(String[] args) throws IOException {
-        String rubai = "Privet";
+        String rubai = """
+                Privet!
+                Salut!""";
         FileWriter writer = null;
         try {
-            writer = new FileWriter("C:\\Users\\potin\\OneDrive\\Desktop\\exemplu.txt");
+            writer = new FileWriter("test2.txt");
             for (int i = 0; i < rubai.length(); i++) {
                 writer.write(rubai.charAt(i));
             }
