@@ -18,7 +18,7 @@ public class FileWriterEx {
 //                writer.write(rubai.charAt(i));
 //            }
 //            writer.write(rubai);
-            writer.write(s);
+            writer.write(s + "\n");
             System.out.println("Done!");
         } catch (IOException e) {
             e.printStackTrace();
