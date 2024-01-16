@@ -11,9 +11,7 @@ public class FileWriterEx {
                 Не отмоешь слезами, не стереть,
                 И не вернуть назад его слова.""";
         String s = "Felicitari!";
-        FileWriter writer = null;
-        try {
-            writer = new FileWriter("test2.txt", true);
+        try (FileWriter writer = new FileWriter("test2.txt", true)) {
 //            for (int i = 0; i < rubai.length(); i++) {
 //                writer.write(rubai.charAt(i));
 //            }
@@ -22,8 +20,6 @@ public class FileWriterEx {
             System.out.println("Done!");
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            writer.close();
         }
     }
 }
