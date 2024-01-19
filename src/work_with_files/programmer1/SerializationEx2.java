@@ -7,8 +7,8 @@ import java.io.ObjectOutputStream;
 
 public class SerializationEx2 {
     public static void main(String[] args) {
-        Car car = new Car("Renault", "Megane");
-        Employee employee = new Employee("Maria", "IT", 28, 500, car);
+        Car car = new Car("Renault", "white");
+        Employee employee = new Employee("Maria", "Ivanova", "IT", 500, car);
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("employees2.bin"))) {
             outputStream.writeObject(employee);
             System.out.println("Done!");
