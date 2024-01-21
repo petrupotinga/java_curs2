@@ -28,10 +28,14 @@ public class ChannelBufferEx1 {
             String text = "\nThere are only two ways to live your life." +
                     " One is as though nothing is a miracle. " +
                     "The other is as though everything is a miracle.";
-            ByteBuffer buffer1 = ByteBuffer.allocate(text.getBytes().length);
-            buffer1.put(text.getBytes());
-            buffer1.flip();
+            ByteBuffer buffer1 = ByteBuffer.wrap(text.getBytes());
             channel.write(buffer1);
+
+//            ByteBuffer buffer1 = ByteBuffer.allocate(text.getBytes().length);
+//            buffer1.put(text.getBytes());
+//            buffer1.flip();
+//            channel.write(buffer1);
+            
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
