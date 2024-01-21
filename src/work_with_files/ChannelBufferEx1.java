@@ -25,10 +25,17 @@ public class ChannelBufferEx1 {
                 byteRead = channel.read(buffer);
             }
             System.out.println(stih);
+            String text = "\nThere are only two ways to live your life." +
+                    " One is as though nothing is a miracle. " +
+                    "The other is as though everything is a miracle.";
+            ByteBuffer buffer1 = ByteBuffer.allocate(text.getBytes().length);
+            buffer1.put(text.getBytes());
+            buffer1.flip();
+            channel.write(buffer1);
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
